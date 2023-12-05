@@ -38,10 +38,14 @@
   }
 }
 
-.text-area {
-  margin-top: 2rem;
+.text-area,
+input {
   background-color: rgb(232, 213, 109);
   width: 35%;
+
+}
+
+.text-area {
   height: 20rem;
   border: none;
   border-radius: 2px;
@@ -62,24 +66,39 @@ body {
   align-items: center;
 }
 
-.button {
-  width: 10%;
+.button,
+input {
   margin-top: 2rem;
-  font-size: 19px;
   border-radius: 6px;
   border: none;
-  background-color: rgb(232, 199, 109);
   color: rgb(36, 31, 31);
+}
+
+.button {
+  width: 10%;
+  background-color: rgb(232, 199, 109);
+  font-size: 19px;
+}
+
+input {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  height: 2rem;
+  font-size: 20px;
 }
 
 .recorded-note {
   background-color: pink;
-  height: 10rem;
-  width: 10rem;
+  height: 12rem;
+  width: 12rem;
   border-radius: 2px;
   margin: 1rem;
   box-shadow: 3px 3px 3px rgb(228, 109, 205);
+}
 
+.note-text {
+  font-family: 'Bad Script', cursive;
+  font-size: 18px;
 }
 
 .all-recorded-notes {
@@ -89,6 +108,15 @@ body {
 
 .delete {
   margin-left: 85%;
-  margin-top: 30%;
+  margin-top: 10%;
   color: rgb(20, 19, 19);
+}
+
+.note-title {
+  font-weight: bold;
+}
+
+.no-title:before {
+  content: 'no title';
+  visibility: hidden;
 }
