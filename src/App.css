@@ -86,3 +86,9 @@ body {
   display: inline-flex;
   flex-direction: row;
 }
+
+.delete {
+  margin-left: 85%;
+  margin-top: 30%;
+  color: rgb(20, 19, 19);
+}
