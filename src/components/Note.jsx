@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faNoteSticky, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
+import { NoteModal } from './Modal';
 
-const Note = ({ note, notes }) => {
+function Note({ note, notes }) {
 
 
     const [notesBoard, setNotesBoard] = useState(...notes);
@@ -10,20 +11,21 @@ const Note = ({ note, notes }) => {
         if (window.confirm('Are you sure you want to delete this note?')) {
             const updatedNotesBoard = notes.filter(note => note.id !== id)
             setNotesBoard([...updatedNotesBoard]);
+            console.log(updatedNotesBoard);
         }
     }
 
 
     return (
-        < div className="all-recorded-notes" >
+        <div className="all-recorded-notes">
             <div className='recorded-note'>
                 <p className={note.title ? 'note-title' : 'no-title'}>{note.title}</p>
-                <p className='note-text' required>{note.note}</p>
+                <p className='note-text me-2'  >{note.note}</p>
                 <p className='note-date'>{note.created}</p>
+                <NoteModal note={note} />
                 <FontAwesomeIcon icon={faTrash} className="delete" onClick={() => { deleteNote(note.id) }} />
             </div>
         </div >
-
     )
 }
 

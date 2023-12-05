@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NotesForm } from './NotesForm';
 import Note from './Note';
 import { v4 as uuidv4 } from 'uuid';
+import { NoteModal } from './Modal';
 
 uuidv4();
 
@@ -22,9 +23,9 @@ export const AllNotes = () => {
 
         <div>
             <NotesForm addNote={addNote} />
-            {notes.map((note, id) => (<Note note={note} key={id} notes={notes} />))}
+            <div class='results'>
+                {notes.map((note, id) => <Note note={note} key={id} notes={notes} />)}
+            </div>
         </div>
-
     )
-
 }

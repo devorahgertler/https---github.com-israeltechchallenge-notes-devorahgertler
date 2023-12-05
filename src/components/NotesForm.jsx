@@ -7,7 +7,6 @@ export const NotesForm = ({ addNote }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (note === "") {
-            alert('This is a required field');
             return null
         } else {
             addNote(note, title);
@@ -20,7 +19,7 @@ export const NotesForm = ({ addNote }) => {
     return (
         <form onSubmit={handleSubmit} className='form'>
             <input type='text' placeholder='Title' onChange={(e) => { setTitle(e.target.value) }} value={title} ></input>
-            <textarea placeholder='Your note...' onChange={(e) => { setNote(e.target.value) }} value={note} className='text-area'></textarea>
+            <textarea required placeholder='Your note...' onChange={(e) => { setNote(e.target.value) }} value={note} className='text-area'></textarea>
             <button type='submit' className='button'>Add Note</button>
         </form >
     );
