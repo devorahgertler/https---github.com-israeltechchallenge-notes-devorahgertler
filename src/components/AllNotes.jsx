@@ -14,8 +14,8 @@ export const AllNotes = () => {
         hour: '2-digit',
         minute: '2-digit',
     });
-    const addNote = (note) => {
-        setNotes([...notes, { note: note, created: (month + ' ' + date + ", " + time), id: uuidv4() }])
+    const addNote = (note, title) => {
+        setNotes([...notes, { title: title, note: note, created: (month + ' ' + date + ", " + time), id: uuidv4() }])
     }
 
     return (

@@ -17,8 +17,9 @@ const Note = ({ note, notes }) => {
     return (
         < div className="all-recorded-notes" >
             <div className='recorded-note'>
-                <p>{note.note}</p>
-                <p>{note.created}</p>
+                <p className={note.title ? 'note-title' : 'no-title'}>{note.title}</p>
+                <p className='note-text' required>{note.note}</p>
+                <p className='note-date'>{note.created}</p>
                 <FontAwesomeIcon icon={faTrash} className="delete" onClick={() => { deleteNote(note.id) }} />
             </div>
         </div >
